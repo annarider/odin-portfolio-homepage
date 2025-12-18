@@ -101,20 +101,35 @@ address {
    ======================================== */
 
 .hero {
+    position: relative;
+    background-color: var(--cream);
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Blue slanted background - mobile only covers image */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 420px;
     background: linear-gradient(135deg, #17BEBB 0%, #1AA9B0 100%);
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    padding: var(--spacing-xl) var(--container-padding);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
+    z-index: 0;
 }
 
 .hero-container {
+    position: relative;
     max-width: var(--container-max);
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-xl);
+    gap: 0;
     width: 100%;
+    padding: var(--spacing-xl) var(--container-padding);
+    z-index: 1;
 }
 
 .hero-image {
@@ -144,8 +159,8 @@ address {
 }
 
 .hero-content {
-    background-color: var(--white);
-    padding: var(--spacing-xl);
+    background-color: transparent;
+    padding: var(--spacing-xl) 0 0 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
