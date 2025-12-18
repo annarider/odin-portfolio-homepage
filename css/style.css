@@ -1,0 +1,443 @@
+/* ========================================
+   CSS RESET & BASE STYLES
+   ======================================== */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   CSS CUSTOM PROPERTIES
+   ======================================== */
+
+:root {
+    /* Base - Warm Neutrals */
+    --cream: #FAF7F2;
+    --stone: #4A4238;
+    --warm-gray: #8B7E74;
+
+    /* Accent - Rich & Playful */
+    --terracotta: #C97854;
+    --sage: #7A9B76;
+    --highlight: #F4E4D7;
+
+    /* Utility */
+    --white: #FFFFFF;
+    --black: #1A1612;
+
+    /* Typography */
+    --font-heading: 'Fraunces', serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    --spacing-3xl: 6rem;
+
+    /* Container */
+    --container-max: 1200px;
+    --container-padding: 1.5rem;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--stone);
+    background-color: var(--cream);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+address {
+    font-style: normal;
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero {
+    background: linear-gradient(135deg, #17BEBB 0%, #1AA9B0 100%);
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-xl) var(--container-padding);
+}
+
+.hero-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    width: 100%;
+}
+
+.hero-image {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-name {
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    background-color: var(--white);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    color: var(--stone);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content {
+    background-color: var(--white);
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-title {
+    color: var(--stone);
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-description {
+    color: var(--warm-gray);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-description:last-of-type {
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-social {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.social-link {
+    color: var(--stone);
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-flex;
+}
+
+.social-link:hover {
+    color: var(--terracotta);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   PROJECTS SECTION
+   ======================================== */
+
+.projects {
+    padding: var(--spacing-3xl) var(--container-padding);
+    background-color: var(--cream);
+}
+
+.projects-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+}
+
+.projects-heading {
+    color: var(--stone);
+    margin-bottom: var(--spacing-xl);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+}
+
+.project-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.project-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.project-placeholder {
+    opacity: 0.9;
+}
+
+.project-info {
+    padding: var(--spacing-lg);
+}
+
+.project-name {
+    color: var(--stone);
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-description {
+    color: var(--warm-gray);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.project-links {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.project-link {
+    color: var(--stone);
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-flex;
+}
+
+.project-link:hover {
+    color: var(--terracotta);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   CONTACT SECTION
+   ======================================== */
+
+.contact {
+    background: linear-gradient(135deg, #17BEBB 0%, #1AA9B0 100%);
+    padding: var(--spacing-3xl) var(--container-padding);
+}
+
+.contact-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+}
+
+.contact-content {
+    background-color: var(--white);
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-heading {
+    color: var(--stone);
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-description {
+    color: var(--warm-gray);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+}
+
+.contact-details {
+    color: var(--warm-gray);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.8;
+}
+
+.contact-details a {
+    color: var(--stone);
+    transition: color 0.2s ease;
+}
+
+.contact-details a:hover {
+    color: var(--terracotta);
+}
+
+.contact-social {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.contact-image {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+}
+
+/* ========================================
+   TABLET BREAKPOINT (768px)
+   ======================================== */
+
+@media (min-width: 768px) {
+    :root {
+        --container-padding: 2rem;
+    }
+
+    .hero-container {
+        grid-template-columns: auto 1fr;
+        gap: var(--spacing-2xl);
+        align-items: center;
+    }
+
+    .hero-image {
+        max-width: 280px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-image {
+        max-width: 100%;
+    }
+}
+
+/* ========================================
+   DESKTOP BREAKPOINT (1024px)
+   ======================================== */
+
+@media (min-width: 1024px) {
+    :root {
+        --container-padding: 3rem;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero-container {
+        grid-template-columns: 340px 1fr;
+        gap: var(--spacing-3xl);
+    }
+
+    .hero-image {
+        max-width: 340px;
+    }
+
+    .hero-content {
+        padding: var(--spacing-2xl) var(--spacing-3xl);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-xl);
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr auto;
+        gap: var(--spacing-3xl);
+        align-items: stretch;
+    }
+
+    .contact-content {
+        padding: var(--spacing-2xl) var(--spacing-3xl);
+    }
+
+    .contact-image {
+        width: 340px;
+        max-width: 340px;
+    }
+}
+
+/* ========================================
+   LARGE DESKTOP BREAKPOINT (1440px)
+   ======================================== */
+
+@media (min-width: 1440px) {
+    .hero-container {
+        gap: 4rem;
+    }
+
+    .projects-grid {
+        gap: 2rem;
+    }
+
+    .contact-container {
+        gap: 4rem;
+    }
+}
