@@ -398,14 +398,22 @@ address {
         gap: var(--spacing-lg);
     }
 
-    /* Contact: Keep single column on tablet, smaller image */
+    /* Contact: Side-by-side layout on tablet */
     .contact-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr auto;
+        gap: var(--spacing-xl);
+        align-items: stretch;
+        padding: 0 var(--container-padding);
+    }
+
+    .contact-content {
+        padding: 0;
     }
 
     .contact-image {
-        max-width: 300px;
-        margin: 0 auto;
+        width: 280px;
+        max-width: 280px;
+        margin: 0;
     }
 }
 
