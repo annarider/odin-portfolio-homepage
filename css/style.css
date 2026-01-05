@@ -294,7 +294,7 @@ address {
 
 .contact {
     background: linear-gradient(135deg, #17BEBB 0%, #1AA9B0 100%);
-    padding: var(--spacing-3xl) var(--container-padding);
+    padding: var(--spacing-3xl) 0;
 }
 
 .contact-container {
@@ -302,53 +302,63 @@ address {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-xl);
+    gap: 0;
 }
 
 .contact-content {
-    background-color: var(--white);
-    padding: var(--spacing-xl);
+    background-color: transparent;
+    padding: 0 var(--container-padding);
     display: flex;
     flex-direction: column;
+    color: var(--white);
 }
 
 .contact-heading {
-    color: var(--stone);
+    color: var(--white);
     margin-bottom: var(--spacing-md);
 }
 
 .contact-description {
-    color: var(--warm-gray);
+    color: var(--white);
     font-size: 1rem;
     line-height: 1.7;
     margin-bottom: var(--spacing-lg);
 }
 
 .contact-details {
-    color: var(--warm-gray);
+    color: var(--white);
     margin-bottom: var(--spacing-lg);
     line-height: 1.8;
 }
 
 .contact-details a {
-    color: var(--stone);
-    transition: color 0.2s ease;
+    color: var(--white);
+    transition: opacity 0.2s ease;
 }
 
 .contact-details a:hover {
-    color: var(--terracotta);
+    opacity: 0.8;
 }
 
 .contact-social {
     display: flex;
     gap: var(--spacing-md);
     align-items: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.contact-social .social-link {
+    color: var(--white);
+}
+
+.contact-social .social-link:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
 }
 
 .contact-image {
     width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
+    margin: 0 -0px;
 }
 
 .contact-image img {
@@ -368,14 +378,27 @@ address {
         --container-padding: 2rem;
     }
 
+    /* Hero: Blue background partially covers About me section */
+    .hero::before {
+        height: 550px;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), 0 100%);
+    }
+
     .hero-container {
         grid-template-columns: auto 1fr;
         gap: var(--spacing-2xl);
-        align-items: center;
+        align-items: start;
+        padding-top: var(--spacing-2xl);
     }
 
     .hero-image {
         max-width: 280px;
+    }
+
+    .hero-content {
+        background-color: var(--white);
+        padding: var(--spacing-xl);
+        margin-top: 40px;
     }
 
     .projects-grid {
@@ -383,12 +406,14 @@ address {
         gap: var(--spacing-lg);
     }
 
+    /* Contact: Keep single column on tablet, smaller image */
     .contact-container {
         grid-template-columns: 1fr;
     }
 
     .contact-image {
-        max-width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
     }
 }
 
@@ -401,13 +426,17 @@ address {
         --container-padding: 3rem;
     }
 
-    .hero {
-        min-height: 600px;
+    /* Hero: Blue background covers most of image and 3/4 of About me */
+    .hero::before {
+        height: 650px;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), 0 100%);
     }
 
     .hero-container {
         grid-template-columns: 340px 1fr;
         gap: var(--spacing-3xl);
+        align-items: start;
+        padding-top: var(--spacing-3xl);
     }
 
     .hero-image {
@@ -415,7 +444,9 @@ address {
     }
 
     .hero-content {
+        background-color: var(--white);
         padding: var(--spacing-2xl) var(--spacing-3xl);
+        margin-top: 0;
     }
 
     .projects-grid {
@@ -423,19 +454,22 @@ address {
         gap: var(--spacing-xl);
     }
 
+    /* Contact: Side-by-side layout on desktop */
     .contact-container {
         grid-template-columns: 1fr auto;
         gap: var(--spacing-3xl);
         align-items: stretch;
+        padding: 0 var(--container-padding);
     }
 
     .contact-content {
-        padding: var(--spacing-2xl) var(--spacing-3xl);
+        padding: 0;
     }
 
     .contact-image {
         width: 340px;
         max-width: 340px;
+        margin: 0;
     }
 }
 
