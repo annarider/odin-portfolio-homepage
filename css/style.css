@@ -445,19 +445,19 @@ address {
     }
 
     .hero-container {
-        grid-template-columns: 340px 1fr;
-        gap: var(--spacing-3xl);
-        align-items: start;
+        grid-template-columns: 500px 1fr;
+        gap: 0;
+        align-items: center;
         padding-top: var(--spacing-3xl);
     }
 
     .hero-image {
-        max-width: 340px;
+        max-width: 500px;
     }
 
     .hero-content {
         background-color: var(--white);
-        padding: var(--spacing-2xl) var(--spacing-3xl);
+        padding: var(--spacing-2xl) var(--spacing-xl);
         margin-top: 0;
     }
 
@@ -491,7 +491,7 @@ address {
 
 @media (min-width: 1440px) {
     .hero-container {
-        gap: 4rem;
+        gap: 0;
     }
 
     .projects-grid {
