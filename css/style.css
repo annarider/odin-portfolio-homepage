@@ -388,21 +388,27 @@ address {
     }
 
     .hero-container {
-        grid-template-columns: auto 1fr;
-        gap: var(--spacing-2xl);
+        grid-template-columns: 1fr;
+        gap: 0;
         align-items: start;
         padding-top: var(--spacing-2xl);
+        position: relative;
     }
 
     .hero-image {
-        max-width: 280px;
+        max-width: 50%;
+        margin-left: var(--spacing-md);
+        margin-bottom: 0;
+        position: relative;
+        z-index: 2;
     }
 
     .hero-name {
         position: absolute;
-        bottom: 20px;
-        left: 0;
-        right: 0;
+        bottom: auto;
+        top: 40px;
+        left: 200px;
+        right: auto;
         font-size: 3rem;
         z-index: 2;
     }
@@ -410,7 +416,9 @@ address {
     .hero-content {
         background-color: var(--white);
         padding: var(--spacing-xl);
-        margin-top: 40px;
+        margin-top: -120px;
+        margin-left: var(--spacing-2xl);
+        margin-right: var(--spacing-2xl);
     }
 
     .projects-grid {
@@ -453,12 +461,23 @@ address {
 
     .hero-image {
         max-width: 500px;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .hero-name {
+        bottom: 20px;
+        top: auto;
+        left: 0;
+        right: 0;
     }
 
     .hero-content {
         background-color: var(--white);
         padding: var(--spacing-2xl) var(--spacing-xl);
         margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .projects-grid {
