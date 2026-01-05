@@ -361,7 +361,8 @@ address {
 
 .contact-image {
     width: 100%;
-    margin: 0 -0px;
+    margin: 0;
+    background-color: transparent;
 }
 
 .contact-image img {
