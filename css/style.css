@@ -343,6 +343,17 @@ address {
     opacity: 0.8;
 }
 
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-icon {
+    flex-shrink: 0;
+    color: var(--white);
+}
+
 .contact-social {
     display: flex;
     gap: var(--spacing-md);
