@@ -381,46 +381,6 @@ address {
         --container-padding: 2rem;
     }
 
-    /* Hero: Blue background partially covers About me section */
-    .hero::before {
-        height: 550px;
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), 0 100%);
-    }
-
-    .hero-container {
-        grid-template-columns: 1fr;
-        gap: 0;
-        align-items: start;
-        padding-top: var(--spacing-2xl);
-        position: relative;
-    }
-
-    .hero-image {
-        max-width: 50%;
-        margin-left: var(--spacing-md);
-        margin-bottom: 0;
-        position: relative;
-        z-index: 2;
-    }
-
-    .hero-name {
-        position: absolute;
-        bottom: auto;
-        top: 40px;
-        left: 200px;
-        right: auto;
-        font-size: 3rem;
-        z-index: 2;
-    }
-
-    .hero-content {
-        background-color: var(--white);
-        padding: var(--spacing-xl);
-        margin-top: -120px;
-        margin-left: var(--spacing-2xl);
-        margin-right: var(--spacing-2xl);
-    }
-
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-lg);
@@ -466,10 +426,12 @@ address {
     }
 
     .hero-name {
+        position: absolute;
         bottom: 20px;
         top: auto;
         left: 0;
         right: 0;
+        color: var(--white);
     }
 
     .hero-content {
