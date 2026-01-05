@@ -400,10 +400,9 @@ address {
 
     .hero-name {
         position: absolute;
-        bottom: auto;
-        top: calc(100% - 30px);
-        left: calc(100% - 50px);
-        right: auto;
+        bottom: 20px;
+        left: 0;
+        right: 0;
         font-size: 3rem;
         z-index: 2;
     }
